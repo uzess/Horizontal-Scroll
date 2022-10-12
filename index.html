@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Horizontal Scroll</title>
+	<style type="text/css">
+		body {
+		  margin:0;
+		  font-family:Georgia;
+		  overflow: hidden;
+		}
+
+		#horizontal-container {
+		  overflow-y:scroll;
+		  overflow-x:hidden;
+		  transform: rotate(270deg) translateX(-100%);
+		  transform-origin: top left;
+		  background-color:#999;
+		  position:absolute;
+		  width:100vh;
+		  height:100vw;
+		}
+
+		#horizontal-container .box {
+		  width:100vw;
+		  height:100vh;
+		  display:inline-block;
+		  position:relative;
+		}
+
+		#horizontal-container .box > div {
+		  font-size:86px;
+		  color:#FFF;
+		  position:absolute;
+		  white-space: initial;
+		  padding: 20px;
+		}
+
+
+		#horizontal-inner-container {
+		  transform: rotate(90deg) translateY(-100vh);
+		  transform-origin: top left;
+		  white-space:nowrap;
+		}
+
+	</style>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="jquery.nicescroll-master/dist/jquery.nicescroll.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#horizontal-container").niceScroll({
+				smoothscroll: true,
+			    horizrailenabled: true,
+			    scrollspeed: 150,
+			    railvalign: 'bottom',
+			    autohidemode: 'hidden'
+			});
+		})
+	</script>
+</head>
+<body>
+	<div id="horizontal-container">
+	  <div id="horizontal-inner-container">
+	    <div class="box one">
+	    	<div>
+	    		Rem est integer adipiscing nec facere nascetur nullam facilisis risus, totam quibusdam nunc ab, etiam quidem enim elementum, qui, recusandae suscipit! Iure? Tempora perspiciatis do varius eaque convallis consectetur mi hymenaeos ad vel culpa rutrum ullam ac ex recusandae aenean? Unde anim mattis dicta cumque placerat quia nihil rerum inventore.
+	    	</div>
+	    </div>
+
+	    <div class="box two"><div>
+	    	<img src="https://risethemes.com/wp-content/uploads/edd/2020/09/responsive-layout-rarebiz-pro.png">
+	    </div></div>
+	    <div class="box three"><div>Rem est integer adipiscing nec facere nascetur nullam facilisis risus, totam quibusdam nunc ab, etiam quidem enim elementum, qui, recusandae suscipit! Iure? Tempora perspiciatis do varius eaque convallis consectetur mi hymenaeos ad vel culpa rutrum ullam ac ex recusandae aenean? Unde anim mattis dicta cumque placerat quia nihil rerum inventore.</div></div>
+	    <div class="box four"><div>Last</div></div>
+	  </div>
+	</div>
+</body>
+</html>
